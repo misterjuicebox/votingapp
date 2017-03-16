@@ -1,0 +1,180 @@
+/*Write all of your CSS here*/
+
+/******** Site Wide ********/
+
+.infoblock {
+    background-color: #272634;
+    padding: 15px 30px 15px 30px;
+    color: #E3E3E4;
+    margin-top: 20px;
+}
+
+.inlineblockbutton {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 435px;
+    margin-top: 15px;
+}
+
+.inlineblockh2 {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+/******** Tables ********/
+
+table {
+  border-collapse: collapse;  
+}
+th,
+td {
+  padding: 12px 15px 10px 15px;
+  border: 1px solid #E1E1E1;
+
+  }
+
+tr:nth-child(even) {
+    background-color: #676770;
+  }
+
+
+th:first-child,
+td:first-child {
+  padding-left: 15px; }
+
+th:last-child,
+td:last-child {
+  padding-right: 15px; }
+
+#userstable {
+    margin-top: 15px;
+}
+
+.blanktable {
+    border: none;
+    background-color: #272634;
+}
+
+/******** Header ********/
+
+body {
+    margin: 0;
+
+}
+
+#header {
+    background-color: #272634;
+}
+
+#header h2{
+    font-size: 3rem;
+    color: #E3E3E4;
+    padding: 8px;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+#header h4{
+    font-size: 2rem;
+    color: #E3E3E4;
+    padding: 8px;
+    display: inline-block;
+    margin-bottom: 0px;
+    margin-left: 35%;
+}
+
+
+
+#header h5 {
+    color: #E3E3E4;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+#logout {
+    display: inline-block;
+    margin-bottom: 0px;
+    margin-left: 3%;
+    margin-top: 14px;
+    vertical-align: top;
+}
+
+
+#dashboardbutton {
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: top;
+    margin-top: 14px;
+}
+
+input[type="submit"], button {
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 0px;
+    padding: 0 20px;
+    background-color: #06AAE2;
+    border: none;
+    color: #E3E3E4;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #007394;
+    color: #E3E3E4;
+}
+
+a {
+    color: #E3E3E4;
+}
+
+/******** Login and Registration ********/
+
+.loginandreg {
+    width: 44%;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #272634;
+    margin-top: 20px;
+    padding: 15px;
+    color: #E3E3E4;
+}
+
+/******** Dashboard ********/
+
+#postmessage {
+    background-color: #272634;
+    padding: 15px 30px 15px 30px;
+    color: #E3E3E4;
+    margin-top: 20px;
+}
+
+#messages {
+    background-color: #272634;
+    padding: 15px 30px 15px 30px;
+    color: #E3E3E4;
+    margin-top: 20px;
+}
+
+.singlemessage {
+    border: 2px #fff solid;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.comments {
+    margin-bottom: 10px;
+    margin-left: 50px;
+}
+
+.commenttext {
+    border: 2px #fff solid;
+    padding: 5px;
+
+}
+
+.postcomment {
+   margin-left: 50px;
+    
+}
+
+

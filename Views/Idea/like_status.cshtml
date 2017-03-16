@@ -1,0 +1,40 @@
+@{ ViewData["Title"] = "Like Status"; }
+
+<div class="infoblock">
+        <form id="logout" action="/logout" method="post">
+            <input type="submit" value="Logout">
+        </form>
+
+        <form id="logout" action="/bright_ideas" method="get">
+            <input type="submit" value="Bright Ideas">
+        </form>
+
+</div>
+
+<div id="messages">
+<h5><a href="/users/@ViewBag.idea.users_id">@ViewBag.idea.alias</a> says:</h5>
+<div class="singlemessage">
+<p>@ViewBag.idea.idea</p>
+</div>
+
+<div class="infoblock">
+
+    <h3>People Who Voted This Topic:</h3>
+
+    <div id="userstable">
+
+        <table>
+            <tr>
+                <th>Alias</th>
+                <th>Name</th>
+            </tr>
+            @{foreach(var like in ViewBag.likes){
+            <tr>
+                <td><a href="/users/@like.id">@like.alias</a></td>
+                <td>@like.name</td>
+            </tr>
+            }}
+        </table>
+
+    </div>
+

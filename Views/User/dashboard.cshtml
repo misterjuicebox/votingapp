@@ -1,0 +1,50 @@
+@{ ViewData["Title"] = "Bright ideas"; }
+@model beltexam4.ViewModels.IdeaViewModel
+
+
+<div class="infoblock">
+    <h2>Hi @ViewBag.user.alias!</h2>
+        <form id="logout" action="/logout" method="post">
+            <input type="submit" value="Logout">
+        </form>
+</div>
+
+<div class="infoblock">
+
+        <form asp-controller="Idea" asp-action="postidea" method="post">
+        <textarea cols="140" rows="10" asp-for="idea" placeholder="Post something witty here..." /></textarea>
+        <span asp-validation-for="idea"></span>
+        <input type="hidden" value="@ViewBag.user.id" asp-for="users_id">
+        <input type="hidden" value="@ViewBag.user.alias" asp-for="alias">
+        <button type="submit">Add Topic!</button>
+    </form>
+</div>
+
+<div id="messages">
+@{ foreach(var x in ViewBag.ideas) {
+<h5><a href="/users/@x.users_id">@x.alias says:</a></h5>
+<div class="singlemessage">
+<p>@x.idea</p>
+</div>
+<form action="/vote_yes" method="post">
+    <input type="hidden" value="@x.id" name="idea_id">
+    <input type="hidden" value="@ViewBag.user.id" name="user_id">
+    <button type="submit">Vote Yes</button>
+</form>
+
+<form action="/vote_no" method="post">
+    <input type="hidden" value="@x.id" name="idea_id">
+    <input type="hidden" value="@ViewBag.user.id" name="user_id">
+    <button type="submit">Vote No</button>
+</form>
+<p><a href="/bright_ideas/@x.id">@x.likes</a> people voted yes for this.</p>
+<p><a href="/bright_ideas/@x.id">@x.no_votes</a> people voted no for this.</p>
+
+if(ViewBag.user.id == @x.users_id)
+{
+<form action="/delete" method="post">
+    <input type="hidden" value="@x.id" name="idea_id">
+    <input type="hidden" value="@x.users_id" name="user_id">
+    <button type="submit">Delete Message</button>
+</form>
+}}}
